@@ -1,0 +1,50 @@
+﻿<Window x:Class="client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnLoadUsers"  Content="Load users" HorizontalAlignment="Left" Margin="505,22,0,0" VerticalAlignment="Top" Click="btnLoadUsers_Click"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="32,24,0,0" VerticalAlignment="Top" Height="25"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="57,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fullname" HorizontalAlignment="Left" Margin="37,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Role" HorizontalAlignment="Left" Margin="62,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="100,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="txtFullname" HorizontalAlignment="Left" Margin="100,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="txtRole" HorizontalAlignment="Left" Margin="100,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="100,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="btnSaveUser" Content="Save user" HorizontalAlignment="Left" Margin="133,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.227,-0.99" Click="btnSaveUser_Click"/>
+        <DataGrid x:Name="dgUser" Margin="322,79,30,138"
+                  ItemsSource="{Binding}"
+                  AutoGenerateColumns="False" Initialized="dgUser_Initialized">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Binding="{Binding Path=Username}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}"/>
+                <DataGridTextColumn Header="Fullname" Binding="{Binding Path=Fullname}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Path=Role}"/>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="btnEditUser_Click">
+                                Edit
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="btnDeleteUser_Click">
+                                Delete
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "l8yqEN7uDLIM/8GC1IQZ0RueHfb6dh20cIVKfuqDlLY6lM7dNlQoJcrIVtxeAKyFOHNq0r8tqvfRu5kFis2PPw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dayd4\\Documents\\Projectes\\synentec\\client\\client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dayd4\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
